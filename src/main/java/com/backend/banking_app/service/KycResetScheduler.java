@@ -22,7 +22,7 @@ public class KycResetScheduler {
             account.setDailyTransferred(0);
         }
         userReposi.saveAll(accounts);
-        System.out.println("✅ Daily transfer limits reset");
+        System.out.println("Daily transfer limits reset");
     }
 
     // Reset monthly transfers on 1st of every month
@@ -33,6 +33,6 @@ public class KycResetScheduler {
             account.setMonthlyTransferred(0);
         }
         userReposi.saveAll(accounts);
-        System.out.println("✅ Monthly transfer limits reset");
+        System.out.println("Monthly transfer limits reset");
     }
 }
