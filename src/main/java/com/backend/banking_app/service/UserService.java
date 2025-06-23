@@ -179,32 +179,3 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 }
-    /*@Transactional
-    public String transferBalance(TransferRequestDto transferRequestDto) {
-        // Find source and destination accounts
-        Account sourceAccount = userReposi.findById(transferRequestDto.getFromUserId())
-                .orElseThrow(() -> new RuntimeException("Source account not found"));
-
-        Account destinationAccount = userReposi.findById(transferRequestDto.getToUserId())
-                .orElseThrow(() -> new RuntimeException("Destination account not found"));
-
-        // Check if source account has sufficient balance
-        if (sourceAccount.getBalance() < transferRequestDto.getAmount()) {
-            throw new RuntimeException("Insufficient balance in source account");
-        }
-
-        // Perform the transfer
-        double amount = transferRequestDto.getAmount();
-        sourceAccount.setBalance(sourceAccount.getBalance() - amount);
-        destinationAccount.setBalance(destinationAccount.getBalance() + amount);
-
-        // Save the updated accounts
-        userReposi.save(sourceAccount);
-        userReposi.save(destinationAccount);
-
-        // Create transactions for both accounts
-        createTransaction(sourceAccount.getId(), "transfer-out", amount);
-        createTransaction(destinationAccount.getId(), "transfer-in", amount);
-
-        return "Transfer successful";
-    }*/
