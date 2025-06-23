@@ -11,6 +11,4 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleRuntimeException(RuntimeException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
-
-    // Optional: You can handle other exception types here (e.g., EntityNotFoundException, etc.)
 }
